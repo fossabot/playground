@@ -46,11 +46,6 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.eluder.coveralls</groupId>
-        <artifactId>coveralls-maven-plugin</artifactId>
-        <version>4.3.0</version>
-      </plugin>
-      <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.1</version>
@@ -61,16 +56,23 @@
               <goal>prepare-agent</goal>
             </goals>
           </execution>
+          <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
 
-<dependencies>
-  <dependency>
-    <groupId>org.wildfly.swarm</groupId>
-    <artifactId>jaxrs</artifactId>
-  </dependency>
-</dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>org.wildfly.swarm</groupId>
+      <artifactId>jaxrs</artifactId>
+    </dependency>
+  </dependencies>
 
 </project>
