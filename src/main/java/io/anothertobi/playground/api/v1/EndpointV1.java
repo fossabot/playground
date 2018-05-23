@@ -16,4 +16,10 @@ public class EndpointV1 {
   public Boolean alive() {
     return true;
   }
+
+  @GET
+  @Path("version")
+  public String version() {
+    return "v1";
+  }
 }
